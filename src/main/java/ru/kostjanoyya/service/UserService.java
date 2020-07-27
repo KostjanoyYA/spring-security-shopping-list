@@ -4,7 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import ru.kostjanoyya.entity.User;
-import ru.kostjanoyya.entity.UserRepository;
+import ru.kostjanoyya.repositories.UserRepository;
 
 @Service
 public class UserService {
@@ -22,6 +22,7 @@ public class UserService {
     public void create(UserRepr userRepr) {
         User user = new User();
         user.setUsername(userRepr.getUsername());
+        user.setIsEnabled(true);
         user.setPassword(passwordEncoder.encode(userRepr.getPassword()));
         repository.save(user);
     }

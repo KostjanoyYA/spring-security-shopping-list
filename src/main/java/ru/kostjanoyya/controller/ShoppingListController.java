@@ -10,9 +10,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import ru.kostjanoyya.entity.ShoppingItem;
-import ru.kostjanoyya.entity.ShoppingItemRepository;
+import ru.kostjanoyya.repositories.ShoppingItemRepository;
 import ru.kostjanoyya.entity.User;
-import ru.kostjanoyya.entity.UserRepository;
+import ru.kostjanoyya.repositories.UserRepository;
 
 import java.security.Principal;
 

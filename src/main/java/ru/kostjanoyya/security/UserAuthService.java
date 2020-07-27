@@ -7,7 +7,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
-import ru.kostjanoyya.entity.UserRepository;
+import ru.kostjanoyya.repositories.UserRepository;
 
 import java.util.Collections;
 
@@ -27,7 +27,7 @@ public class UserAuthService implements UserDetailsService {
                 .map(user -> new User(
                         user.getUsername(),
                         user.getPassword(),
-                        Collections.singletonList(new SimpleGrantedAuthority("USER"))
+                        Collections.singletonList(new SimpleGrantedAuthority("USER")) //TODO Здесь заглушка USER
                 ))
                 .orElseThrow(() -> new UsernameNotFoundException("Пользователь не найден"));
     }
