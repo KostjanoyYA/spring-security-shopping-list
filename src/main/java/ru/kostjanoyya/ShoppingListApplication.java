@@ -8,15 +8,14 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 @SpringBootApplication
 public class ShoppingListApplication {
 
-	//private UserRepository userRepository;
-
 	@Bean
 	public BCryptPasswordEncoder passwordEncoder() {
 		return new BCryptPasswordEncoder();
 	}
 
-//	@Bean
-//	public User createAdmin() {
+	//TODO Сделать предзаполнение БД учёткой админа
+	//https://howtodoinjava.com/spring-boot2/h2-database-example/
+//	public static User createAdmin() {
 //		User admin = new User();
 //		admin.setIsEnabled(true);
 //		admin.setUsername("2");
@@ -30,8 +29,5 @@ public class ShoppingListApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(ShoppingListApplication.class, args);
-		System.out.println("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
 	}
-
-
 }
